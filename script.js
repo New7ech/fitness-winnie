@@ -290,6 +290,7 @@ const requestForm = document.querySelector('.request-form');
 if (requestSection && requestForm) {
     const requestType = requestForm.querySelector('select[name="type"]');
     const submitButton = requestForm.querySelector('button[type="submit"]');
+    const fieldStateUpdaters = [];
 
     Array.from(requestForm.querySelectorAll('input, select, textarea')).forEach((field) => {
         const label = field.closest('label');
@@ -304,6 +305,7 @@ if (requestSection && requestForm) {
             label.classList.toggle('is-filled', field.value.trim().length > 0);
         };
 
+        fieldStateUpdaters.push(updateFilledState);
         field.addEventListener('focus', () => label.classList.add('is-active'));
         field.addEventListener('blur', () => label.classList.remove('is-active'));
         field.addEventListener('input', updateFilledState);
@@ -338,5 +340,11 @@ if (requestSection && requestForm) {
     };
 
     requestType?.addEventListener('change', updateRequestType);
+    requestForm.addEventListener('reset', () => {
+        window.setTimeout(() => {
+            fieldStateUpdaters.forEach((updateFilledState) => updateFilledState());
+            updateRequestType();
+        }, 0);
+    });
     updateRequestType();
 }

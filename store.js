@@ -1,13 +1,13 @@
 (function () {
     const categories = [
-        { code: 'GEN', label: 'Sport general' },
-        { code: 'DIA', label: 'Diastasis' },
-        { code: 'PDS', label: 'Perte de poids' },
-        { code: 'NUT', label: 'Nutrition' },
-        { code: 'ENT', label: 'Entreprises' },
-        { code: 'PUB', label: 'Sport public' },
-        { code: 'DOM', label: 'Domicile' },
-        { code: 'PLN', label: 'Plans personnalises' },
+        { code: 'GEN', label: 'Sport general', href: '#categories' },
+        { code: 'DIA', label: 'Diastasis', href: '#diastasis' },
+        { code: 'PDS', label: 'Perte de poids', href: '#poids' },
+        { code: 'NUT', label: 'Nutrition', href: '#nutrition' },
+        { code: 'ENT', label: 'Entreprises', href: '#entreprises' },
+        { code: 'PUB', label: 'Sport public', href: '#entreprises' },
+        { code: 'DOM', label: 'Domicile', href: '#domicile' },
+        { code: 'PLN', label: 'Plans personnalises', href: '#reservation' },
     ];
 
     const services = {
@@ -196,7 +196,7 @@
 
         if (categoryGrid) {
             categoryGrid.innerHTML = categories.map((category) => `
-                <a class="category-card" href="#reservation">
+                <a class="category-card" href="${escapeHtml(category.href)}">
                     <span>${escapeHtml(category.code)}</span>
                     <strong>${escapeHtml(category.label)}</strong>
                 </a>
@@ -248,8 +248,30 @@
             }
 
             event.preventDefault();
+            const formData = new FormData(requestForm);
+            const message = [
+                'Bonjour Fitwinnie, je souhaite un accompagnement sportif.',
+                '',
+                `Type: ${formData.get('type') || 'Non renseigne'}`,
+                `Nom: ${formData.get('name') || 'Non renseigne'}`,
+                `Email: ${formData.get('email') || 'Non renseigne'}`,
+                `Telephone: ${formData.get('phone') || 'Non renseigne'}`,
+                `Objectif: ${formData.get('goal') || 'Non renseigne'}`,
+                `Service: ${formData.get('service') || 'Non renseigne'}`,
+                `Date souhaitee: ${formData.get('preferred_date') || 'Non renseignee'}`,
+                `Disponibilite: ${formData.get('preferred_time') || 'Non renseignee'}`,
+                '',
+                `Message: ${formData.get('message') || 'Non renseigne'}`,
+            ].join('\n');
+            const whatsappUrl = `https://wa.me/22677706991?text=${encodeURIComponent(message)}`;
+            const opened = window.open(whatsappUrl, '_blank', 'noopener');
+
+            if (!opened) {
+                window.location.href = whatsappUrl;
+            }
+
             requestForm.reset();
-            showToast('Demande envoyee');
+            showToast('Demande prete sur WhatsApp');
         });
     }
 
