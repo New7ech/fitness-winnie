@@ -3,68 +3,74 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Commande confirmee Fitwinnie Store.">
-    <title>Commande confirmee | Fitwinnie Store</title>
+    <meta name="description" content="Confirmation de demande Fitwinnie.">
+    <title>Confirmation | Fitwinnie</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="static.css">
 </head>
-<body data-page="success">
+<body data-page="service-request">
     <div class="top-announcement">
         <p class="contact-line">Contact +226 77706991</p>
-        <div class="marquee" aria-label="Informations boutique">
+        <div class="marquee" aria-label="Informations Fitwinnie">
             <div class="marquee-track">
-                <span>Livraison partout a Ouagadougou</span>
-                <span>Paiement mobile money, carte, virement ou livraison</span>
-                <span>Facture PDF disponible apres commande</span>
-                <span>Livraison partout a Ouagadougou</span>
-                <span>Paiement mobile money, carte, virement ou livraison</span>
-                <span>Facture PDF disponible apres commande</span>
+                <span>Diastasis, perte de poids et nutrition</span>
+                <span>Sport public, sport en entreprise et sport a domicile</span>
+                <span>Plans personnalises pour particuliers et organisations</span>
+                <span>Diastasis, perte de poids et nutrition</span>
+                <span>Sport public, sport en entreprise et sport a domicile</span>
+                <span>Plans personnalises pour particuliers et organisations</span>
             </div>
         </div>
-        <p class="currency-line">FCFA XOF</p>
+        <p class="currency-line">Ouagadougou</p>
     </div>
 
     <header class="shop-header shop-header-compact" data-site-header>
-        <a class="brand" href="index.html" aria-label="Accueil Fitwinnie Store">
+        <a class="brand" href="index.html" aria-label="Accueil Fitwinnie">
             <span class="brand-box">Fitwinnie</span>
         </a>
 
-        <nav class="checkout-steps" aria-label="Parcours commande">
-            <a href="index.html">Catalogue</a>
-            <a href="panier.html">Panier</a>
-            <a href="commande.html">Paiement</a>
+        <nav class="checkout-steps" aria-label="Navigation accompagnement">
+            <a href="index.html">Accueil</a>
+            <a href="index.html#categories">Services</a>
+            <a href="index.html#reservation">Demande</a>
         </nav>
-
-        <div class="header-actions" aria-label="Actions boutique">
-            <a class="cart-link" href="panier.html" aria-label="Panier">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-2 8H8L6 3H3m6 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
-                <span data-cart-count>0</span>
-            </a>
-        </div>
     </header>
 
     <main class="shop-page">
-        <section class="shop-flow" data-success-view></section>
+        <section class="shop-flow">
+            <div class="flow-heading">
+                <span>Fitwinnie</span>
+                <h1>Votre demande est orientee vers le suivi</h1>
+                <p>Les demandes Fitwinnie passent par le formulaire de contact afin de proposer un programme vraiment personnalise.</p>
+            </div>
+
+            <div class="request-panel">
+                <h2>Construire une relation durable</h2>
+                <p>Un bon accompagnement repose sur un objectif clair, des seances regulieres, un suivi nutritionnel et des ajustements selon les resultats.</p>
+                <a class="button button-red" href="index.html#reservation">Faire une demande</a>
+                <a class="button button-muted" href="index.html">Retour a l'accueil</a>
+            </div>
+        </section>
     </main>
 
     <footer class="shop-footer">
         <div>
             <span class="footer-logo">Fitwinnie</span>
-            <p>Materiel fitness, musculation, cardio et nutrition sportive pour equiper votre entrainement.</p>
+            <p>Coaching sportif, diastasis, perte de poids, nutrition, sport public, sport en entreprise et plans personnalises.</p>
         </div>
         <div>
-            <h3>Catalogue</h3>
-            <a href="index.html#tapis">Tapis de course</a>
-            <a href="index.html#rameurs">Rameurs</a>
+            <h3>Services</h3>
+            <a href="index.html#diastasis">Diastasis</a>
+            <a href="index.html#poids">Perte de poids</a>
             <a href="index.html#nutrition">Nutrition</a>
         </div>
         <div>
-            <h3>Commande</h3>
-            <a href="panier.html">Panier</a>
-            <a href="commande.html">Paiement</a>
-            <a href="index.html#reservation">Demande de devis</a>
+            <h3>Accompagnement</h3>
+            <a href="index.html#entreprises">Entreprises</a>
+            <a href="index.html#domicile">Sport a domicile</a>
+            <a href="index.html#reservation">Plan personnalise</a>
         </div>
         <div>
             <h3>Contact</h3>
@@ -72,8 +78,5 @@
             <p>+226 77 70 69 91</p>
         </div>
     </footer>
-
-    <script src="store.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
