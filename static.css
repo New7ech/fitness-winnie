@@ -1,0 +1,46 @@
+.button[disabled],
+.button[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.cart-line-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.cart-remove-button {
+    color: #ef3218;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.checkout-empty {
+    display: grid;
+    gap: 1rem;
+}
+
+@media print {
+    .top-announcement,
+    .shop-header,
+    .shop-footer,
+    .success-actions,
+    .scroll-progress,
+    .site-toast {
+        display: none !important;
+    }
+
+    body {
+        background: #ffffff !important;
+    }
+
+    .shop-page {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+}
